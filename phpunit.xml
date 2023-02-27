@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="./vendor/autoload.php" colors="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd" cacheDirectory=".phpunit.cache" backupGlobals="false">
+  <coverage>
+    <include>
+      <directory suffix=".php">src/start/src</directory>
+    </include>
+    <report>
+      <html outputDirectory="./tmp/report" lowUpperBound="35" highLowerBound="80"/>
+      <text outputFile="php://stdout" showUncoveredFiles="false"/>
+    </report>
+  </coverage>
+  <testsuites>
+    <testsuite name="start">
+      <directory>src/start/tests</directory>
+    </testsuite>
+  </testsuites>
+  <logging/>
+</phpunit>
