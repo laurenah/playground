@@ -45,6 +45,3 @@ jobs:
 
       - name: Run code coverage
         run: ./vendor/bin/phpunit  --coverage-clover=coverage.xml
-
-      - name: Save code coverage
-        run: bash <(curl -s https://codecov.io/bash)
