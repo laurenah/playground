@@ -31,17 +31,3 @@ jobs:
 
       - name: Run test suite
         run: XDEBUG_MODE=coverage ./vendor/bin/phpunit
-
-  code-coverage:
-
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
-
-      - name: Run code coverage
-        run: ./vendor/bin/phpunit  --coverage-clover=coverage.xml
