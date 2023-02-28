@@ -2,32 +2,30 @@
 
 declare(strict_types=1);
 
-namespace Start\tests;
+namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Start\Start;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\Attributes\DataProvider;
+use Playground\Start\ThreeStart;
 
-class StartTest extends TestCase
+class ThreeStartTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider provideNumbersDivisibleByThree
-     */
+    #[Test]
+    #[DataProvider('provideNumbersDivisibleByThree')]
     public function willReturnStartWhenMultipleOfThree(array $numbers): void
     {
         foreach ($numbers as $number) {
-            $this->assertEquals('start', (new Start())->run($number));
+            $this->assertEquals('Start', (new ThreeStart())->run($number));
         }
     }
 
-    /**
-     * @test
-     * @dataProvider provideNumbersIndivisibleByThree
-     */
+    #[Test]
+    #[DataProvider('provideNumbersIndivisibleByThree')]
     public function willReturnNumberWhenNotDivisibleByThree(array $numbers): void
     {
         foreach ($numbers as $number) {
-            $this->assertEquals($number, (new Start())->run($number));
+            $this->assertEquals($number, (new ThreeStart())->run($number));
         }
     }
 

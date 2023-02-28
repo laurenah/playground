@@ -2,19 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Start;
+namespace Playground\Start;
 
 /**
  * When a number is divisible by 3, return 'start', otherwise return the number
  */
-class Start
+class ThreeStart
 {
     public function run(int $number): string|int
     {
-        if ($number % 3) {
-            return $number;
-        }
-
-        return 'start';
+        return ($number % 3) ? $number : 'Start';
     }
 }
